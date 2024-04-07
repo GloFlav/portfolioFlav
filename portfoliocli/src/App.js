@@ -1,7 +1,5 @@
 import './App.css';
 import { useEffect, useState, useRef} from "react";
-import Commands from "./Commands";
-import ReactDOMServer from 'react-dom/server';
 
 function App() {
   const [ input, setInput ] = useState("");
@@ -15,7 +13,7 @@ function App() {
     { command: "experiences.........", description: "List all the experiences of the creator of this site." },
     { command: "help................", description: "Show all commands." },
     { command: "interface...........", description: "Toggle the interface into dynamic mode." },
-    { command: "project.............", description: "List large projects already done by the site owner." },
+    { command: "projects............", description: "List large projects already done by the site owner." },
     { command: "social-network......", description: "Link to all social networks of the portfolio owner." },
     { command: "technical-skills....", description: "List all skills of the portfolio owner." }
   ];
@@ -25,7 +23,7 @@ function App() {
     { command: "About me............", description: "I'm a versatile IT professional comfortable with both front-end and back-end development. My strength lies in efficiently solving problems, as well as being adaptable in project management and design. My passion for technology drives me to constantly seek new ways to innovate and create effective solutions to meet my clients' needs." },
   ];
 
-  const exerience = [
+  const experience = [
     { command: "2024................", description: "President of ENI Students Association \n IDEA Academy Embassador \n Founder of ENI Hôtesse \n Organizer of the closing ceremony of the 40th anniversary of ENI" },
     { command: "2023................", description: "President of ENI Students Association \n Founder and Organizer of ENI Novice Immersion (Tech Event) \n Founder and Organizer of Miray Tournament (sport event) \n Cofounder and CO-Organizer of Hack-It Hackathon \n Organizer of DevHunt Edition 02 \n Founder and Organizer of Bachelor IT (Tech Event and Forum ) \n Organizer of the 40th Anniversary of ENI" },
     { command: "2022................", description: "Designer and developper at ONN (Intern)" },
@@ -33,13 +31,13 @@ function App() {
   ];
 
   const project = [
-    { command: "Portfolio CLI..........................", description: "Portfolio with a design apparenting as a Command Line Interface" },
-    { command: "Portfolio Dynamic Interface............", description: "Portfolio with a dynamic design" },
-    { command: "ENI Table table schedule...............", description: "A web application to automate the creation of the ENI timetable, considering the availability of teachers and the capacity of classrooms" },
-    { command: "FCE Geolocation Home...................", description: "A web application focused on GIS (Geographic Information System) to manage properties allocated to FCE (Fianarantsoa Côte Est) employees." },
-    { command: "Task Scheduling........................", description: "A Web application demonstrating the best scheduling of tasks using the table and graph method." },
-    { command: "ONN Stock board........................", description: "A web application, focused on GIS, to manage the movements of automobile fleets at ONN (National Office of Nutrition) in Anosy, Antananarivo." },
-    { command: "ONN Float board........................", description: "A web application for the logistics management of ONN." }
+    { command: "Portfolio CLI..................", description: "Portfolio with a design apparenting as a Command Line Interface" },
+    { command: "Portfolio Dynamic Interface....", description: "Portfolio with a dynamic design" },
+    { command: "ENI Table table schedule.......", description: "A web application to automate the creation of the ENI timetable, considering the availability of teachers and the capacity of classrooms" },
+    { command: "FCE Geolocation Home...........", description: "A web application focused on GIS (Geographic Information System) to manage properties allocated to FCE (Fianarantsoa Côte Est) employees." },
+    { command: "Task Scheduling................", description: "A Web application demonstrating the best scheduling of tasks using the table and graph method." },
+    { command: "ONN Stock board................", description: "A web application, focused on GIS, to manage the movements of automobile fleets at ONN (National Office of Nutrition) in Anosy, Antananarivo." },
+    { command: "ONN Float board................", description: "A web application for the logistics management of ONN." }
   ];
 
   const socialnetwork = [
@@ -66,34 +64,64 @@ function App() {
         case 'about':
           newOutput += '<table style="text-align: left; vertical-align: top;">';
           about.forEach(item => {
-            newOutput += `<tr style="text-align: left; vertical-align: top;"><td ">${item.command}</td><td>${item.description}</td></tr>`;
+            newOutput += `<tr style="text-align: left; vertical-align: top;"><td class="command-cell" >${item.command}</td><td>${item.description}</td></tr>`;
           });
           newOutput += '</table>';
           break;
-        case 'help':
-          newOutput += '<table>';
-          helpData.forEach(item => {
-            newOutput += `<tr><td>${item.command}</td><td>${item.description}</td></tr>`;
-          });
-          newOutput += '</table>';
-          break;
-        case 'help':
-          newOutput += '<table>';
-          helpData.forEach(item => {
-            newOutput += `<tr><td>${item.command}</td><td>${item.description}</td></tr>`;
-          });
-          newOutput += '</table>';
-          break;
-        case 'cv':
-          newOutput += 'link to my cv';
-          break;
+
         case 'clear':
           setOutput('');
           setInput('');
           return;
-        case 'interface':
-          window.location.href = 'link to my interface portfolio';
+
+        case 'cv':
+          newOutput += 'CVFlav.pdf';
           break;
+
+        case 'experiences':
+          newOutput += '<table style="text-align: left; vertical-align: top;">';
+          experience.forEach(item => {
+            newOutput += `<tr style="text-align: left; vertical-align: top;"><td  class="command-cell" >${item.command}</td><td>${item.description}</td></tr>`;
+          });
+          newOutput += '</table>';
+          break;
+
+        case 'projects':
+          newOutput += '<table style="text-align: left; vertical-align: top;">';
+          project.forEach(item => {
+            newOutput += `<tr style="text-align: left; vertical-align: top;"><td  class="command-cell" >${item.command}</td><td>${item.description}</td></tr>`;
+          });
+          newOutput += '</table>';
+          break;
+  
+        case 'social-network':
+          newOutput += '<table style="text-align: left; vertical-align: top;">';
+          socialnetwork.forEach(item => {
+            newOutput += `<tr style="text-align: left; vertical-align: top;"><td  class="command-cell"  >${item.command}</td><td>${item.description}</td></tr>`;
+          });
+          newOutput += '</table>';
+          break;
+
+        case 'technical-skills':
+          newOutput += '<table style="text-align: left; vertical-align: top;">';
+          technicalskill.forEach(item => {
+            newOutput += `<tr style="text-align: left; vertical-align: top;"><td  class="command-cell" >${item.command}</td><td>${item.description}</td></tr>`;
+          });
+          newOutput += '</table>';
+          break;
+
+        case 'help':
+        newOutput += '<table style="text-align: left; vertical-align: top;">';
+        helpData.forEach(item => {
+          newOutput += `<tr style="text-align: left; vertical-align: top;"><td class="command-cell" >${item.command}</td><td>${item.description}</td></tr>`;
+        });
+        newOutput += '</table>';
+        break;
+        
+        case 'interface':
+          window.location.href = 'CVFlav.pdf' ;
+          break;
+
         default:
           newOutput += 'unknown command \n';
       }

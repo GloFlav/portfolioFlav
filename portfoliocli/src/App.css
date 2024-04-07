@@ -39,9 +39,19 @@ input {
 }
 .green{
   display: inline;
-  color: green;
+  color: rgb(167, 245, 167);
   font-weight: bold;
 }
 .input-line input{
   margin-left: 5px;
+}
+.input-line span{
+  font-weight: bold;
+}
+.command-cell{
+  white-space: nowrap;
+  text-align: left; 
+  vertical-align: top;
+  color: rgb(167, 245, 167); 
+  font-weight: bold;
 }
