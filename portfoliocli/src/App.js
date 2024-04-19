@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState, useRef} from "react";
-
+import { Link } from 'react-router-dom';
 function App() {
   const [ input, setInput ] = useState("");
   const [ output, setOutput ] = useState("");
@@ -119,8 +119,8 @@ function App() {
         break;
         
         case 'interface':
-          window.location.href = 'CVFlav.pdf' ;
-          break;
+          return <Link to="/App1">Redirecting to App1</Link>;
+          // break;
 
         default:
           newOutput += 'unknown command \n';
@@ -140,9 +140,10 @@ function App() {
       <br/> Andry Sambatra Gloria Flavien RANDRIAMBOLOLONA (c) Not a Corporation.
       <div className='Title'>
         
-        <br/>.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ...
-        <br/>.. __________ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..
-        <br/>..| . . . . .\ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ...
+        <br/>. . . . . . . . . .------.--. . . .-----. .-- . . . . . . . . . . . . . . . ....
+        <br/>.. . . . . . . . .| . ___|. |. . / . \ .\/ ./. . . . . . . . . . . . . . . . ...
+        <br/>.. __________ . . |. .__||. |__ / ._. \ . ./ . . . . . . . . . . . . . . . . ...
+        <br/>..| . . . . .\ . .|__| . |_____|__/.\__\__/ . . . . . . . . . . . . . . . . . ..
         <br/>..|. . ._. . .\ . . . . . . . . . .__ . . . ._____. . . . ____. __. . . . . . ..
         <br/>..| . .|.|. . |. . . . . . . . . ./. | . . ./. . .\. . . | . .|/ .\. . . . . ...
         <br/>..|. . | | . .| . . . . . . . . _/. .|____ /. ._. .\. . .|. . ( . .). . . . . ..
@@ -158,9 +159,9 @@ function App() {
         
       </div>
       
-      <p>
+      {/* <p>
         Type <div className="green"> interface </div> if you want to switch to dynamic mode
-      </p>
+      </p> */}
       <p>
         Type <div className="green"> help </div> to know all commands
       </p>
