@@ -31,8 +31,8 @@ function App() {
   ];
 
   const project = [
-    { command: "Portfolio CLI..................", description: "<a class='link' href='https://linkedin.com/in/gloria-flavien-randriambololona' target='_blank'> Portfolio with a design apparenting as a Command Line Interface </a>" },
-    { command: "Portfolio Dynamic Interface....", description: "<a class='link' href='https://gloriaflavien.netlify.app' target='_blank'> Portfolio with a dynamic design </a>" },
+    { command: "Portfolio CLI..................", description: "<a class='link' href='https://gloriaflavien.netlify.app' target='_blank'> Portfolio with a design apparenting as a Command Line Interface </a>" },
+    { command: "Portfolio Dynamic Interface....", description: "<a class='link' href='' target='_blank'> Portfolio with a dynamic design </a>" },
     { command: "ENI Time Table schedule.......", description: "<a class='link' href='https://https://github.com/GloFlav/EDT_ENI' target='_blank'> A web application to automate the creation of the ENI timetable, considering the availability of teachers and the capacity of classrooms </a>" },
     { command: "FCE Geolocation Home...........", description: "A web application focused on GIS (Geographic Information System) to manage properties allocated to FCE (Fianarantsoa Côte Est) employees." },
     { command: "Task Scheduling................", description: "<a class='link' href='https://ordtab.netlify.app' target='_blank'> A Web application demonstrating the best scheduling of tasks using the table and graph method </a>." },
