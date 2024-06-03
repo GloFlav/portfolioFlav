@@ -12,7 +12,7 @@ function App() {
     { command: "cv..................", description: "Link to the CV (curriculum vitae)." },
     { command: "experiences.........", description: "List all the experiences of the creator of this site." },
     { command: "help................", description: "Show all commands." },
-    // { command: "interface...........", description: "Toggle the interface into dynamic mode." },
+    { command: "interface...........", description: "Toggle the interface into dynamic mode." },
     { command: "projects............", description: "List large projects already done by the site owner." },
     { command: "social-network......", description: "Link to all social networks of the portfolio owner." },
     { command: "technical-skills....", description: "List all skills of the portfolio owner." }
