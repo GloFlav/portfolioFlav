@@ -119,8 +119,8 @@ function App() {
         break;
         
         case 'interface':
-          return <Link to="/App1">Redirecting to App1</Link>;
-          // break;
+          window.location.href = 'https://gloflav.github.io/portfoliodyn';
+          break;
 
         default:
           newOutput += 'unknown command \n';
