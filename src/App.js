@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState, useRef} from "react";
-import { Link } from 'react-router-dom';
 function App() {
   const [ input, setInput ] = useState("");
   const [ output, setOutput ] = useState("");
@@ -12,7 +11,7 @@ function App() {
     { command: "cv..................", description: "Link to the CV (curriculum vitae)." },
     { command: "experiences.........", description: "List all the experiences of the creator of this site." },
     { command: "help................", description: "Show all commands." },
-    // { command: "interface...........", description: "Toggle the interface into dynamic mode." },
+    { command: "interface...........", description: "Toggle the interface into dynamic mode." },
     { command: "projects............", description: "List large projects already done by the site owner." },
     { command: "social-network......", description: "Link to all social networks of the portfolio owner." },
     { command: "technical-skills....", description: "List all skills of the portfolio owner." }
@@ -119,8 +118,8 @@ function App() {
         break;
         
         case 'interface':
-          return <Link to="/App1">Redirecting to App1</Link>;
-          // break;
+          window.location.href = 'https://gloflav.github.io/portfoliodyn';
+          break;
 
         default:
           newOutput += 'unknown command \n';
